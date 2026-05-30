@@ -1,4 +1,6 @@
-# Saves h_t, s_t, r_t from CORnet model using 5 random neuron subsets
+"""
+Saves h_t, s_t, r_t from CORnet model using 5 random neuron subsets
+"""
 import h5py, os, argparse
 import numpy as np
 import fire
