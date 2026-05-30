@@ -1,4 +1,4 @@
-# CORnet-RT with adaptation and an intrinsic timescale hierarchy
+# CORnet-RT with adaptation and leak
 
 Code accompanying "Noisy models of the ventral stream reveal the impact
 of recurrence and learned representations on
