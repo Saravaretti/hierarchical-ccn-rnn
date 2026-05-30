@@ -74,3 +74,9 @@ The stimuli are available at <https://osf.io/7gteq/files/osfstorage>.
 ```bash
 python run.py --model RT --layer IT --data_path data --output_path outputs --seed 1 --times 601
 ```
+--layer selects the area to record (V1, V2, V4, IT).
+--seed sets the simulation index used in the output filename.
+The 5 neuron subsets are drawn with fixed seeds (5–9) inside run.py, so the
+subset selection is reproducible across runs.
+
+
