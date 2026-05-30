@@ -80,3 +80,47 @@ python run.py --model RT --layer IT --data_path data --output_path outputs --see
 subset selection is reproducible across runs.
 
 
+## Computing response timescales
+
+`fit_timescales.py` takes the rate time series produced by `run.py` and
+extracts, per area, the response timescale `τ`.
+
+**Input.** The per-unit rate files (`*_r_t.npy`) for areas V1, V2, V4, IT,
+across simulation seeds (trials) and neuron subsets. Files are matched by name:
+
+```
+CORnet-RT_{area}_{model_tag}_sim{seed}_{condition}_gamma_{gamma_tag}_subset{subset}_r_t.npy
+```
+
+For each (area, subset) the script stacks all seeds into a
+`(units × trials × bins)` array.
+
+**What it does.** It averages the activity across trials, computes the
+autocorrelation function (ACF) of each unit over time lags (up to `MAX_LAG`,
+bin size `BINSIZE`), averages the ACF across units, and fits a damped-oscillation
+model
+
+```
+ACF(t) = a · exp(−t / τ) · cos(2π ω t + φ) + b
+```
+
+by differential evolution. The timescale `τ` is the decay constant of this fit.
+
+**Output.** For every subset, a text file with the four per-area timescales:
+
+```
+adap_{condition}_{model_tag}_subset{subset}_response_r_t_gamma_{gamma_tag}.txt
+   tau_V1: ...
+   tau_V2: ...
+   tau_V4: ...
+   tau_IT: ...
+```
+
+and a single archive with the ACF curves used for the fits:
+
+```
+acf_curves_response_{condition}_{model_tag}_gamma_{gamma_tag}.npz
+   time : lag axis
+   V1, V2, V4, IT : arrays of shape (n_subsets, n_bins)
+```
+
