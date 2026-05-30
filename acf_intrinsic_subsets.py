@@ -14,7 +14,7 @@ SEEDS = range(1, 100)
 SUBSETS = range(1, 6)
 
 INPUT_DIR = "."
-OUTPUT_DIR = "/home/svaretti/scratch/temporal_coding/recurrent-vcx-master_modified/dependence"
+OUTPUT_DIR = "."
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 BINSIZE = 0.033
@@ -113,7 +113,6 @@ def fit_tau(acf_values, time_vector):
 # =========================
 # MAIN LOOP OVER SUBSETS
 # =========================
-# Accumulatore per le ACF (subset × area), salvato in un singolo file alla fine
 all_acfs = {area: [] for area in AREAS}
 
 for subset in SUBSETS:
@@ -130,7 +129,6 @@ for subset in SUBSETS:
             max_lag=MAX_LAG,
             binsize=BINSIZE
         )
-        # Accumula la ACF di questo (area, subset)
         all_acfs[area].append(autocorrelations[area])
 
     best_params = {}
@@ -158,10 +156,6 @@ for subset in SUBSETS:
     )
 
 
-# =========================
-# SALVA TUTTE LE ACF IN UN UNICO .NPZ
-# =========================
-# Per ogni area, impila i 5 subset → shape (n_subsets, n_bins)
 acf_arrays = {area: np.stack(all_acfs[area], axis=0) for area in AREAS}
 
 acf_output_file = os.path.join(
