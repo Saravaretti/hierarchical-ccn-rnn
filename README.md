@@ -20,8 +20,6 @@ This repository contains:
 │   └── cornet_rt.py    # model definition (CORblock_RT, CORnet_RT)
 ├── run.py              # stimulus loading, simulation, feature extraction
 ├── data/               # input stimuli (see "Data")
-├── outputs/            # extracted .npy time series (created at run time)
-├── requirements.txt
 ├── LICENSE
 └── README.md
 ```
