@@ -49,3 +49,23 @@ Per-area parameters:
 | `α`           | adaptation timescale                 | 
 | `noise_scale` | intrinsic noise amplitude            | 
 
+
+
+
+## Data
+
+The main stimulus set comprises nine video clips, each lasting 20 seconds and
+sampled at 30 frames per second (fps). The stimuli are described in detail in
+[«ref»]. Briefly, six of the videos are naturalistic movies depicting
+real-world dynamic scenes, while the remaining three are synthetic controls:
+phase-scrambled versions of two natural movies and a white-noise movie.
+
+The stimuli are available at <https://osf.io/7gteq/files/osfstorage>.
+
+`run.py` reads a single HDF5 file containing an `im_matrix` dataset of shape
+`(H, W, T)`. Place it in `data/` and pass `--data_path data`.
+
+> Note: the stimulus filename is currently hardcoded in `run.py`. Either rename
+> your file accordingly or replace the hardcoded name with a command-line
+> argument.
+
