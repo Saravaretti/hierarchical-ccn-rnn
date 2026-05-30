@@ -34,8 +34,9 @@ This repository contains:
 # Model 
 
 Each area is a CORblock_RT whose state evolves in discrete time as:
-
+```
 adaptation:       s_t = α · s_{t-1} + (1 - α) · r_{t-1}
 adapted input:    u_t = conv_input(input) − β · s_t
 recurrent state:  h_t = conv1(u_t) + (1 - γ) · h_{t-1} + ξ_t,   ξ_t ~ noise_scale · N(0, 1)
 rate:             r_t = ReLU(h_t)
+```
