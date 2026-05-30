@@ -82,7 +82,7 @@ subset selection is reproducible across runs.
 
 ## Computing response timescales
 
-`fit_timescales.py` takes the rate time series produced by `run.py` and
+`acf_response_subsets.py` takes the rate time series produced by `run.py` and
 extracts, per area, the response timescale `τ`.
 
 **Input.** The per-unit rate files (`*_r_t.npy`) for areas V1, V2, V4, IT,
