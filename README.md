@@ -4,7 +4,7 @@ Code accompanying "Noisy models of the ventral stream reveal the impact
 of recurrence and learned representations on
 information processing timescales" (S. Varetti, S. Goldt, E.Piasini, 2026) 
 
-A recurrent model of the ventral stream, with a per-area leak and firing-rate adaptation, reproduces both the intrinsic timescale hierarchy and the hierarchy of stimulus-driven response timescales observed along the visual cortical hierarchy by Piasini et al. (2021), when probed with the same dynamic visual stimuli.
+A recurrent model of the ventral stream, with a per-area leak and firing-rate adaptation, reproduces both the intrinsic timescale hierarchy and the hierarchy of stimulus-driven response timescales observed along the rat visual ventral stream in Ref, when probed with the same dynamic visual stimuli.
 
 
 This repository contains:
@@ -172,4 +172,15 @@ acf_curves_{condition}_{model_tag}_gamma_{gamma_tag}.npz
    time : lag axis
    V1, V2, V4, IT : arrays of shape (n_subsets, n_bins)
 ```
+
+
+@article{piasini2021temporal,
+  title   = {Temporal stability of stimulus representation increases along rodent visual cortical hierarchies},
+  author  = {Piasini, Eugenio and Soltuzu, Liviu and Muratore, Paolo and Caramellino, Riccardo and Vinken, Kasper and Op de Beeck, Hans and Balasubramanian, Vijay and Zoccolan, Davide},
+  journal = {Nature Communications},
+  volume  = {12},
+  pages   = {4448},
+  year    = {2021},
+  doi     = {10.1038/s41467-021-24456-3}
+}
 
