@@ -14,7 +14,7 @@ SEEDS = range(1, 100)
 SUBSETS = range(1, 6)
 
 INPUT_DIR = "."
-OUTPUT_DIR = "/home/svaretti/scratch/temporal_coding/recurrent-vcx-master_modified/dependence"
+OUTPUT_DIR = "."
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 BINSIZE = 0.033
