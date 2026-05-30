@@ -173,6 +173,4 @@ acf_curves_{condition}_{model_tag}_gamma_{gamma_tag}.npz
    V1, V2, V4, IT : arrays of shape (n_subsets, n_bins)
 ```
 
-  doi     = {10.1038/s41467-021-24456-3}
-}
 
