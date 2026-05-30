@@ -173,14 +173,6 @@ acf_curves_{condition}_{model_tag}_gamma_{gamma_tag}.npz
    V1, V2, V4, IT : arrays of shape (n_subsets, n_bins)
 ```
 
-
-@article{piasini2021temporal,
-  title   = {Temporal stability of stimulus representation increases along rodent visual cortical hierarchies},
-  author  = {Piasini, Eugenio and Soltuzu, Liviu and Muratore, Paolo and Caramellino, Riccardo and Vinken, Kasper and Op de Beeck, Hans and Balasubramanian, Vijay and Zoccolan, Davide},
-  journal = {Nature Communications},
-  volume  = {12},
-  pages   = {4448},
-  year    = {2021},
   doi     = {10.1038/s41467-021-24456-3}
 }
 
