@@ -19,7 +19,7 @@ This repository contains:
 │   ├── __init__.py     # exposes cornet_rt (and any other CORnet variants you keep)
 │   └── cornet_rt.py    # model definition (CORblock_RT, CORnet_RT)
 ├── run.py              # stimulus loading, simulation, feature extraction
-├── data/               # input stimuli (see "Data")
+├── stimuli/               # input stimuli 
 ├── LICENSE
 └── README.md
 ```
