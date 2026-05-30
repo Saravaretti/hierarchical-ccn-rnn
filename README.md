@@ -69,3 +69,8 @@ The stimuli are available at <https://osf.io/7gteq/files/osfstorage>.
 > your file accordingly or replace the hardcoded name with a command-line
 > argument.
 
+# Usage 
+
+```bash
+python run.py --model RT --layer IT --data_path data --output_path outputs --seed 1 --times 601
+```
