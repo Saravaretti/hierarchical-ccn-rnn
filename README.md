@@ -124,3 +124,52 @@ acf_curves_response_{condition}_{model_tag}_gamma_{gamma_tag}.npz
    V1, V2, V4, IT : arrays of shape (n_subsets, n_bins)
 ```
 
+
+## Computing intrinsic timescales
+
+`acf_intrinsic_subset.py` is the intrinsic-timescale counterpart of the
+response-timescale script. It shares the same input and fitting procedure; the
+only difference is that the autocorrelation is computed on the single-trial
+activity, **without** averaging across trials first.
+
+**Input.** The same per-unit rate files (`*_r_t.npy`) for areas V1, V2, V4, IT,
+matched by name:
+
+```
+CORnet-RT_{area}_{model_tag}_sim{seed}_{condition}_gamma_{gamma_tag}_subset{subset}_r_t.npy
+```
+
+For each (area, subset) the script stacks all seeds into a
+`(units × trials × bins)` array.
+
+**What it does.** It computes the per-unit autocorrelation function (ACF) over
+time lags (up to `MAX_LAG`, bin size `BINSIZE`) directly on the single-trial
+data, averages the ACF across units, and fits
+
+```
+ACF(t) = a · exp(−t / τ) · cos(2π ω t + φ) + b
+```
+
+by differential evolution. The decay constant `τ` is the **intrinsic** timescale
+(no trial-averaging is applied, so it reflects the ongoing, noise-driven
+correlation structure rather than the stimulus-locked response).
+
+**Output.** For every subset, a text file with the four per-area intrinsic
+timescales:
+
+```
+adap_{condition}_{model_tag}_subset{subset}_intrinsic_r_t_gamma_{gamma_tag}.txt
+   tau_V1: ...
+   tau_V2: ...
+   tau_V4: ...
+   tau_IT: ...
+```
+
+and a single archive with the ACF curves used for the fits:
+
+```
+acf_curves_{condition}_{model_tag}_gamma_{gamma_tag}.npz
+   time : lag axis
+   V1, V2, V4, IT : arrays of shape (n_subsets, n_bins)
+```
+
