@@ -4,7 +4,7 @@ Code accompanying "Noisy models of the ventral stream reveal the impact
 of recurrence and learned representations on
 information processing timescales" (S. Varetti, S. Goldt, E.Piasini, 2026) 
 
-A recurrent model of the ventral stream, with a per-area leak and firing-rate adaptation, reproduces both the intrinsic timescale hierarchy and the hierarchy of stimulus-driven response timescales observed along the rat visual ventral stream in Ref, when probed with the same dynamic visual stimuli.
+A recurrent model of the ventral stream, with a per-area leak and firing-rate adaptation, reproduces both the intrinsic timescale hierarchy and the hierarchy of stimulus-driven response timescales observed along the rat visual ventral stream in [Piasini et al. (2021)](https://doi.org/10.1038/s41467-021-24456-3), when probed with the same dynamic visual stimuli.
 
 
 This repository contains:
