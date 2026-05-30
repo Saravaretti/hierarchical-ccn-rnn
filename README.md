@@ -42,5 +42,10 @@ rate:             r_t = ReLU(h_t)
 
 
 Per-area parameters:
-
+| Parameter     | Meaning                              | 
+|---------------|--------------------------------------|
+| `γ`           | recurrent leak                       |
+| `β`           | adaptation strength                  | 
+| `α`           | adaptation timescale                 | 
+| `noise_scale` | intrinsic noise amplitude            | 
 
